@@ -15,11 +15,10 @@ $clases = array(
 
 );
 
-function __autoload($clases)
-{
+spl_autoload_register(function($clases){
 	foreach ($clases as $class) {
-		if (file_exists($class)) {
+		if(file_exists($class)){
 			require_once $class;
 		}
 	}
-}
+});

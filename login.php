@@ -1,6 +1,7 @@
 <?php 
 
 require 'app/config/config.php';
+require 'app/includes/helper.php';
 
 
 if( $_SERVER['REQUEST_METHOD']==='POST' ){
@@ -8,6 +9,16 @@ if( $_SERVER['REQUEST_METHOD']==='POST' ){
 	$nickname = $_POST['nickname'];
 	$password = $_POST['password'];
 	$conn = getConnection();
+
+	$stm = $conn->prepare("SELECT name, lastname, nickname, email FROM users WHERE nickname=? and password=?");
+
+	$pwd = pwdcrypt($password);
+
+	$stm->bind_param("ss", $nickname, $pwd);
+	if ($stm->execute()) {
+		
+		$stm->fetch();
+	}
 }
 
 ?>
