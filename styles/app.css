@@ -41,7 +41,7 @@ body{
 	display: inline;
 }
 
-.navbar > ul > li > a{
+.navbar > ul > li > a, .navbar > ul > li.navtext {
 	text-decoration: none;
 	text-align: center;
 	padding: 20px;
