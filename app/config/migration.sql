@@ -32,7 +32,7 @@ CREATE TABLE `users` (
 CHARACTER SET = utf8
 COLLATE = utf8_general_ci
 ENGINE = InnoDB
-AUTO_INCREMENT = 1;
+AUTO_INCREMENT = 2;
 -- ---------------------------------------------------------
 
 
@@ -40,7 +40,8 @@ AUTO_INCREMENT = 1;
 CREATE TABLE `users_workshops` ( 
 	`id` Int( 255 ) UNSIGNED AUTO_INCREMENT NOT NULL, 
 	`user_id` Int( 255 ) UNSIGNED NOT NULL, 
-	`workshop_id` Int( 255 ) UNSIGNED NOT NULL
+	`workshop_id` Int( 255 ) UNSIGNED NOT NULL, 
+	`inscription_date` Timestamp NOT NULL ON UPDATE CURRENT_TIMESTAMP DEFAULT '0000-00-00 00:00:00'
 , 
 	CONSTRAINT `unique_id` UNIQUE( `id` ) )
 CHARACTER SET = utf8
@@ -66,25 +67,29 @@ AUTO_INCREMENT = 1;
 -- ---------------------------------------------------------
 
 
--- CREATE INDEX "index_id1" --------------------------------
-CREATE INDEX `index_id1` USING BTREE ON `users_workshops`( `id` );
+-- CREATE INDEX "fk_user_workshop" -------------------------
+CREATE INDEX `fk_user_workshop` USING BTREE ON `users_workshops`( `user_id` );
 -- ---------------------------------------------------------
 
 
--- CREATE INDEX "index_user_id" ----------------------------
-CREATE INDEX `index_user_id` USING BTREE ON `users_workshops`( `user_id` );
--- ---------------------------------------------------------
-
-
--- CREATE INDEX "index_workshop_id" ------------------------
-CREATE INDEX `index_workshop_id` USING BTREE ON `users_workshops`( `workshop_id` );
+-- CREATE INDEX "fk_workshops" -----------------------------
+CREATE INDEX `fk_workshops` USING BTREE ON `users_workshops`( `workshop_id` );
 -- ---------------------------------------------------------
 
 
 -- CREATE INDEX "index_id" ---------------------------------
 CREATE INDEX `index_id` USING BTREE ON `workshops`( `id` );
 -- ---------------------------------------------------------
---------------------------------- FIN --------------------------------------------------------
+
+
+-- CREATE LINK "fk_workshops" ------------------------------
+ALTER TABLE `users_workshops` ADD CONSTRAINT `fk_workshops` FOREIGN KEY ( `workshop_id` ) REFERENCES `workshops`( `id` ) ON DELETE Cascade ON UPDATE Cascade;
+-- ---------------------------------------------------------
+
+
+-- CREATE LINK "fk_user_workshop" --------------------------
+ALTER TABLE `users_workshops` ADD CONSTRAINT `fk_user_workshop` FOREIGN KEY ( `user_id` ) REFERENCES `users`( `id` ) ON DELETE Cascade ON UPDATE Cascade;
+-- ---------------------------------------------------------
 
 
 
