@@ -2,6 +2,17 @@
 <?php 
 
 require '../app/config/config.php';
+require '../app/controller/WorkshopController.php';
+require '../app/controller/UserController.php';
+
+
+$controller = new WorkshopController();
+$cursos = $controller->all();
+
+
+$controller2 = new UserController();
+$users = $controller2->all();
+
 
  ?>
 
@@ -44,21 +55,21 @@ require '../app/config/config.php';
     <td>Nombre</td> 
     <td>Apellido</td>
     <td>Nickname</td>
-    <td>Password</td>
-    <td>Admin</td>
     <td>Email</td>
     <td>Opciones</td>
   </tr>
+
+
+  <?php foreach ($users as $user): ?>
   <tr>
-    <td>1</td>
-    <td>Yuceli</td> 
-    <td>Polanco</td>
-    <td>Yuz</td>
-    <td>12345</td>
-    <td>No</td>
-    <td>yuceli.polanco@gmail.com</td>
+    <td><?php echo $user->id ?></td>
+    <td><?php echo $user->name ?></td> 
+    <td><?php echo $user->lastname ?></td>
+    <td><?php echo $user->nickname ?></td>
+    <td><?php echo $user->email ?></td>
     <td><a href="">Eliminar</a><br><br><a href="">Editar</a></td>
   </tr>
+  <?php endforeach; ?>
 </table>
 
 
@@ -74,14 +85,16 @@ require '../app/config/config.php';
     <td>Opciones</td>
   </tr>
 
-  <tr>
-    <td>1</td>
-    <td>Front-End</td> 
-    <td>Aprendizaje básico de HTML5 y CSS3</td>
-    <td>13/02/2015</td>
-    <td>20/02/2015</td>
-    <td><a href="">Eliminar</a><br><br><a href="">Editar</a></td>
-  </tr>
+  <?php foreach ($cursos as $curso): ?>
+    <tr>
+      <td><?php echo $curso->id ?></td>
+      <td><?php echo $curso->title ?></td>
+      <td><?php echo $curso->description ?></td>
+      <td><?php echo $curso->begin_date ?></td>
+      <td><?php echo $curso->end_date ?></td>
+      <td><a href="">Eliminar</a><br><br><a href="">Editar</a></td>
+    </tr>
+  <?php endforeach; ?>
 </table>
   </div>
   

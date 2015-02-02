@@ -36,7 +36,27 @@
 
 		public static function all()
 		{
-			
+			$con = getConnection();
+			$result = $con->query("SELECT * from workshops");
+
+			if ($result->num_rows > 0) {
+				$cursos = array();
+			    while($row = $result->fetch_assoc()) {
+			    	$curso = new stdClass();
+			    	$curso->id          = $row["id"];
+			    	$curso->title       = $row["title"];
+			    	$curso->description = $row["description"];
+			    	$curso->begin_date  = $row["begin_date"];
+			    	$curso->end_date    = $row["end_date"];
+
+			    	array_push($cursos, $curso);
+			    }
+			} else {
+			    echo "0 results";
+			}
+			$con->close();
+
+			return $cursos;
 		}
 
 		public static function delete($id)	

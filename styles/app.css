@@ -115,7 +115,7 @@ footer{
 }.tableWorkshops tr:hover td{
   
 }
-.tableWorkshops tr:nth-child(odd){ background-color:#007f7f; }
+.tableWorkshops tr:nth-child(odd){ background-color:#42B8DD; }
 .tableWorkshops tr:nth-child(even)    { background-color:#ffffff; }.tableWorkshops td{
   vertical-align:middle;
   
