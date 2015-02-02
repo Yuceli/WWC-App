@@ -4,7 +4,7 @@
 	* 
 	*/
 
-	namespace 'app\controller'
+	//namespace 'app\controller'
 
 	class WorkshopController
 	{
