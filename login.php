@@ -10,14 +10,15 @@ if( $_SERVER['REQUEST_METHOD']==='POST' ){
 	$password = $_POST['password'];
 	$conn = getConnection();
 
-	$stm = $conn->prepare("SELECT name, lastname, nickname, email FROM users WHERE nickname=? and password=? LIMIT 1");
+	$stm = $conn->prepare("SELECT id, name, lastname, nickname, email FROM users WHERE nickname=? and password=? LIMIT 1");
 
 	$pwd = pwdcrypt($password);
 
 	$stm->bind_param("ss", $nickname, $pwd);
 	if ($stm->execute()) {
-		$stm->bind_result($name, $lastname, $nick, $mail);
+		$stm->bind_result($id, $name, $lastname, $nick, $mail);
 		if($stm->fetch()){
+			$_SESSION['id'] = $id;
 			$_SESSION['name'] = $name;
 			$_SESSION['lastname'] = $lastname;
 			$_SESSION['nickname'] = $nick;

@@ -65,6 +65,7 @@ footer, .main:after{
 
 footer{
 	text-align: center;
+  clear: both;
 }
 
 .tableWorkshops {
@@ -165,4 +166,67 @@ div.centerTable{
 div.centerTable table{
     margin: 0 auto;
     text-align: left;
+}
+
+/* Inician ambios realizados por Javier Ojeda */
+
+.courses-list {
+  max-width: 960px;
+}
+
+.course{
+  display: inline-block;
+  background-color: lightgrey;
+  width: 250px;
+  border-radius: 10px;
+  margin: 0px 20px 40px 20px;
+  padding: 10px;
+
+}
+
+input[type="submit"]{
+  color: black;
+  border: 1px solid red;
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+}
+
+input[type="submit"]:hover{
+  cursor: pointer;
+  background: rgb(66, 184, 221);
+  -webkit-transition: background 1s;  
+  -moz-transition: background 1s;  
+  -o-transition: background 1s;  
+  transition: background 1s;
+}
+
+.msg{
+    margin: 10px 0px;
+    padding:12px;
+    border-radius: 10px;
+    text-align: center;
+    height: 40px;
+}
+
+.error {
+    color: #D8000C;
+    border: 2px solid #D8000C;
+    background-color: #FFBABA;
+}
+
+.info {
+    color: #00529B;
+    border: 2px solid #00529B;
+    background-color: #BDE5F8;
+}
+.success {
+    color: #4F8A10;
+    border: 2px solid #4F8A10;
+    background-color: #DFF2BF;
+}
+.warning {
+    color: #9F6000;
+    border: 2px solid #9F6000
+    background-color: #FEEFB3;
 }
