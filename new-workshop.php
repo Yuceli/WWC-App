@@ -36,8 +36,28 @@ if( $_SERVER['REQUEST_METHOD']==='POST' ){
   <meta charset="UTF-8">
   <title>Nuevo Taller</title>
   <link rel="stylesheet" href="styles/workshop.css">
+  <link rel="stylesheet" type="text/css" href="styles/app.css">
 </head>
 <body>
+
+  <div class="main">
+  <nav class="navbar">
+    <ul class="left-part">
+      <li><a href="index.php">Inicio</a></li>
+      <li><a href="courses.php">Cursos</a></li>
+    </ul>
+    <ul class="right-part">
+    <?php if ( isset($_SESSION['nickname']) ){  ?>
+    <li class="navtext"><?php echo 'Bienvendo ' . $_SESSION['name']; ?> <a href="logout.php">Salir</a></li>
+
+    <?php } else { ?>
+    <li><a href="login.php">Iniciar sesión</a></li>
+    <?php } ?>
+      
+    </ul>
+  </nav>
+  <div class="content">
+
 
 <div class="main">
   <div class="login">
@@ -53,17 +73,18 @@ if( $_SERVER['REQUEST_METHOD']==='POST' ){
         <input type="text" name="title" placeholder="Título del taller" required>
       </li>
       <li>
-        <textarea rows="4" cols="50" name="description" placeholder="Descripcíon" required>
+        <textarea rows="4" cols="54" name="description" placeholder="Descripción" required>
         </textarea>
       </li>
+      <br>
       <li>
         <label for="begin_date">Fecha de Inicio</label>
         <input type="date" name="begin_date" required>
       </li>
+      <br>
       <li>
         <label for="end_date">Fecha de Término</label>
         <input type="date" name="end_date" required>
-      </li>
       <ul class="buttons">
         <li><input type="submit" value="Guardar"></li>
         <li><input type="reset" value="Limpiar"></li>

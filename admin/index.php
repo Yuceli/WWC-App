@@ -10,7 +10,6 @@ require '../app/config/config.php';
 <head>
   <meta charset="utf-8">
 	<title>Administracion de WWC</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="../styles/app.css">
 </head>
 

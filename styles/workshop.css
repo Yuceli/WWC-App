@@ -22,26 +22,32 @@ body{
   margin-top: 100px;
 }
 
-.login-head{
-
-}
 
 form li {
   list-style-type: none;
 }
 
 input[type=text], input[type=password], input[type=email]{
-  width: 100%;
+  width: 99%;
   height: 30px;
   margin-bottom: 10px;
 }
 
 input[type=submit], input[type=reset]{
   float: right;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: rgb(66, 184, 221);
+  font-size: 110%;
+  padding: 5px 5px 5px 5px;
+
 }
+
 
 .buttons li {
   display: inline;
+
 }
 
 .buttons li a{
@@ -59,3 +65,5 @@ input[type=submit], input[type=reset]{
   margin-bottom: 10px;
   text-align: center;
 }
+
+
