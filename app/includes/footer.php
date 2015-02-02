@@ -2,7 +2,7 @@
 		
 
 	</div>
-</div> <! Final del div main>
+</div> <!--  Final del div main -->
 <footer>
 	<p>Copyright &copy; 2015 - WWC Mérida</p>
 </footer>
