@@ -68,7 +68,7 @@
 		
 		 $con = getConnection(); 
 	     $statment = $con->prepare("DELETE FROM users WHERE id=?");
-         $statment->bind_param("i", $user->id);
+         $statment->bind_param("i", $id);
          $statment->execute();
          $statment->close();
          $con->close();	
@@ -76,7 +76,20 @@
 
 		public static function getById($id)
 		{
-			# code...
+			$con = getConnection();
+      $result = $con->query( " SELECT * FROM users WHERE id={$id}");
+      if ( $result->num_rows == 1 ) {
+        $row = $result->fetch_assoc();
+        $user = new stdClass();
+        $user->id          = $row["id"];
+        $user->name        = $row["name"];
+        $user->lastname    = $row["lastname"];
+        $user->nickname    = $row["nickname"];
+        $user->email       = $row["email"];
+
+        return $user;
+      }
+      $con->close();
 		}
 
 	}

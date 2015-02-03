@@ -1,5 +1,5 @@
 
-<?php 
+<?php
 
 require '../app/config/config.php';
 require '../app/controller/WorkshopController.php';
@@ -40,7 +40,7 @@ $users = $controller2->all();
     <?php } else { ?>
     <li><a href="login.php">Iniciar sesión</a></li>
     <?php } ?>
-      
+
     </ul>
   </nav>
   <div class="content">
@@ -52,7 +52,7 @@ $users = $controller2->all();
   <table class="tableWorkshops" style="width:50%">
   <tr>
     <td>Id</td>
-    <td>Nombre</td> 
+    <td>Nombre</td>
     <td>Apellido</td>
     <td>Nickname</td>
     <td>Email</td>
@@ -63,11 +63,11 @@ $users = $controller2->all();
   <?php foreach ($users as $user): ?>
   <tr>
     <td><?php echo $user->id ?></td>
-    <td><?php echo $user->name ?></td> 
+    <td><?php echo $user->name ?></td>
     <td><?php echo $user->lastname ?></td>
     <td><?php echo $user->nickname ?></td>
     <td><?php echo $user->email ?></td>
-    <td><a href="">Eliminar</a><br><br><a href="">Editar</a></td>
+    <td><a href="delete.php?id=<?php echo $user->id ?>">Eliminar</a><br><br><a href="">Editar</a></td>
   </tr>
   <?php endforeach; ?>
 </table>
@@ -78,7 +78,7 @@ $users = $controller2->all();
 <table class="tableWorkshops" style="width:50%">
   <tr>
     <td>Id</td>
-    <td>Título</td> 
+    <td>Título</td>
     <td>Descripción</td>
     <td>Fecha de inicio</td>
     <td>Fecha finalización</td>
@@ -97,6 +97,6 @@ $users = $controller2->all();
   <?php endforeach; ?>
 </table>
   </div>
-  
+
 </body>
 </html>
