@@ -186,7 +186,7 @@ div.centerTable table{
 
 input[type="submit"]{
   color: black;
-  border: 1px solid red;
+  border: 2px solid rgb(66, 184, 221);
   border-radius: 10px;
   width: 100px;
   height: 40px;

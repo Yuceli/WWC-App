@@ -86,4 +86,11 @@
       }
       $con->close();
 		}
+
+		// Cambios de Javier Ojeda
+		public static function isSubscribed($user, $workshop){
+			$con = getConnection();
+			$result = $con->query('SELECT * FROM users_workshops WHERE user_id='.$user.' AND workshop_id='.$workshop);
+			return ($result->num_rows > 0);
+		}
 	}
