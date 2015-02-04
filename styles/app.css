@@ -2,9 +2,38 @@
 body{
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	height: 100%;
-	background-color: #E6E6E6;
+	background: url(../img/siteBackground.jpg) repeat left top;
 	font-size: 14px;
 	color: #333;
+}
+
+.mision{
+  padding-top: 3%;
+
+}
+
+.wrap-text-left{
+ width: 70%;
+ float:left;
+
+}
+
+.wrap-text-right{
+  width: 20%;
+  float:right;
+}
+
+
+.copyright{
+   text-align: center;
+} 
+
+img{
+  width: 25%;
+}
+
+p{
+  text-align: justify;
 }
 
 .main{
@@ -157,6 +186,19 @@ footer{
     overflow-x: auto;
     display: block;
   }
+
+  img{
+     width: 50%;
+     display: block;
+     margin-left: auto;
+     margin-right: auto
+}
+  .wrap-text-left{
+     width: 100%;
+     
+
+}
+
 }
 
 div.centerTable{
@@ -168,10 +210,12 @@ div.centerTable table{
     text-align: left;
 }
 
+
 /* Inician ambios realizados por Javier Ojeda */
 
 .courses-list {
   max-width: 960px;
+  padding-top: 5%;
 }
 
 .course{

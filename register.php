@@ -2,6 +2,7 @@
 
 require 'app/config/config.php';
 require 'app/includes/helper.php';
+include 'app/includes/header.php';
 
 
 if( $_SERVER['REQUEST_METHOD']==='POST' ){
@@ -75,7 +76,7 @@ if( $_SERVER['REQUEST_METHOD']==='POST' ){
 			</li>
 			<ul class="buttons">
 				<li><input type="submit" value="Registrarme"></li>
-				<li><input type="reset" value="Limpiar"></li>
+				<!-- <li><input type="reset" value="Limpiar"></li> -->
 				<li><a href="login.php">&laquo;Regresar</a></li>
 			</ul>
 		</form>
