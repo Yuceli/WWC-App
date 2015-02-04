@@ -38,9 +38,9 @@
 		{
 			$con = getConnection();
 			$result = $con->query("SELECT * from workshops");
+      $cursos = array();
 
 			if ($result->num_rows > 0) {
-				$cursos = array();
 			    while($row = $result->fetch_assoc()) {
 			    	$curso = new stdClass();
 			    	$curso->id          = $row["id"];

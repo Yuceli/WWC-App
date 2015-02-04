@@ -67,7 +67,7 @@ $users = $controller2->all();
     <td><?php echo $user->lastname ?></td>
     <td><?php echo $user->nickname ?></td>
     <td><?php echo $user->email ?></td>
-    <td><a href="delete.php?id=<?php echo $user->id ?>">Eliminar</a><br><br><a href="editUser.php?id=<?php echo $user->id ?>">Editar</a></td>
+    <td><a href="delete.php?id=<?php echo $user->id ?>">Eliminar</a><br><br><a href="editUser.php?id=<?php echo $user->id; ?>">Editar</a></td>
   </tr>
   <?php endforeach; ?>
 </table>

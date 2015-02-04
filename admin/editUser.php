@@ -36,7 +36,7 @@ if ( $_SERVER['REQUEST_METHOD']==='POST') {
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Registrarse</title>
+	<title>Editar usuario</title>
 	<link rel="stylesheet" href="../styles/login.css">
 </head>
 <body>
@@ -44,7 +44,7 @@ if ( $_SERVER['REQUEST_METHOD']==='POST') {
 <div class="main">
 	<div class="login">
 		<div class="login-head">
-			<h1>Ingrese sus datos para registrarse</h1>
+			<h1>Modifica tus datos de usuario</h1>
 		</div>
 		<?php if(isset($_SESSION['message'])){ ?>
 				<div class="message"><?php echo $_SESSION['message']; ?></div>
