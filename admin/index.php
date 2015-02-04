@@ -30,7 +30,6 @@ $users = $controller2->all();
   <nav class="navbar">
     <ul class="left-part">
       <li><a href="index.php">Inicio</a></li>
-      <li><a href="courses.php">Cursos</a></li>
     </ul>
     <ul class="right-part">
     <?php if ( isset($_SESSION['nickname']) ){  ?>
