@@ -7,7 +7,7 @@ if ( isset($_GET['id']) ) {
   $id = $_GET['id'];
 
   $workshopController = new WorkshopController();
-  $user = $workshopController->getById($id);
+  $workshop = $workshopController->getById($id);
   $workshopController->delete($id);
 }
 ?>

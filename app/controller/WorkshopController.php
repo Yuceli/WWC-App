@@ -82,7 +82,7 @@
         $curso->begin_date  = $row["begin_date"];
         $curso->end_date    = $row["end_date"];
 
-        return $user;
+        return $curso;
       }
       $con->close();
 		}
