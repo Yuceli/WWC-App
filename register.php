@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require 'app/config/config.php';
 require 'app/includes/helper.php';
@@ -12,7 +12,7 @@ if( $_SERVER['REQUEST_METHOD']==='POST' ){
 	$name = $_POST['name'];
 	$lastname = $_POST['lastname'];
 	$email = $_POST['email'];
-	
+
 	$conn = getConnection();
 
 	if($repassword !== $password){
@@ -30,7 +30,7 @@ if( $_SERVER['REQUEST_METHOD']==='POST' ){
 		}else{
 			$_SESSION['message'] = 'No se guardo: ' . $conn->error .' '. $stm->error;
 		}
-		
+
 	}
 }
 

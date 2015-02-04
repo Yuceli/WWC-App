@@ -1,24 +1,24 @@
-<?php 
+<?php
 	/**
-	* 
+	*
 	*/
 
 	//require '../config/db.php';
-	
+
 	//namespace 'app\controller'
 
 	class UserController
 	{
-		
+
 		function __construct()
 		{
-			
+
 		}
 
 		public static function save($user)
 		{
-	     
-	     $con = getConnection(); 
+
+	     $con = getConnection();
 	     $statment = $con->prepare("INSERT INTO users (name, lastname, nickname, password, email) VALUES (?, ?, ?, ?, ?)");
          $statment->bind_param("sssss", $user->name, $user->lastname, $user->nickname, $user->password, $user->email);
          $statment->execute();
@@ -29,7 +29,7 @@
 
 		public static function update($user)
 		{
-		 $con = getConnection(); 
+		 $con = getConnection();
 	     $statment = $con->prepare("UPDATE users SET name=?, lastname=?, nickname=?, password=?, email=? WHERE id=?");
          $statment->bind_param("sssssi", $user->name, $user->lastname, $user->nickname, $user->password, $user->email, $user->id);
          $statment->execute();
@@ -63,15 +63,15 @@
 			return $users;
 		}
 
-		public static function delete($id)	
+		public static function delete($id)
 		{
-		
-		 $con = getConnection(); 
+
+		 $con = getConnection();
 	     $statment = $con->prepare("DELETE FROM users WHERE id=?");
          $statment->bind_param("i", $id);
          $statment->execute();
          $statment->close();
-         $con->close();	
+         $con->close();
 		}
 
 		public static function getById($id)

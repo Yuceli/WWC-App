@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require '../app/config/config.php';
 require '../app/controller/UserController.php';
@@ -33,7 +33,7 @@ if ( isset($_GET['id']) ) {
 		<?php	} else { ?>
 		<li><a href="login.php">Iniciar sesión</a></li>
 		<?php	} ?>
-			
+
 		</ul>
 	</nav>
 	<div class="content">
