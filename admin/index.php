@@ -92,7 +92,7 @@ $users = $controller2->all();
       <td><?php echo $curso->description ?></td>
       <td><?php echo $curso->begin_date ?></td>
       <td><?php echo $curso->end_date ?></td>
-      <td><a href="deleteWorkshop.php?id=<?php echo $curso->id ?>">Eliminar</a><br><br><a href="">Editar</a></td>
+      <td><a href="deleteWorkshop.php?id=<?php echo $curso->id ?>">Eliminar</a><br><br><a href="editWorkshop.php?id=<?php echo $curso->id ?>">Editar</a></td>
     </tr>
   <?php endforeach; ?>
 </table>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require 'app/config/config.php';
 require 'app/includes/helper.php';
@@ -12,7 +12,7 @@ if( $_SERVER['REQUEST_METHOD']==='POST' ){
   $begin_date  = $_POST['begin_date'];
   $end_date    = $_POST['end_date'];
   $conn = getConnection();
-  
+
   $controller = new WorkshopController();
   $workshop   = new stdClass();
 
@@ -53,7 +53,7 @@ if( $_SERVER['REQUEST_METHOD']==='POST' ){
     <?php } else { ?>
     <li><a href="login.php">Iniciar sesión</a></li>
     <?php } ?>
-      
+
     </ul>
   </nav>
   <div class="content">
