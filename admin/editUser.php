@@ -66,8 +66,8 @@ if ( $_SERVER['REQUEST_METHOD']==='POST') {
       <input type="hidden" name="id", value="<?php echo $id; ?>">
 			<ul class="buttons">
 				<li><input type="submit" value="Guardar"></li>
-				<li><input type="reset" value="Limpiar"></li>
-				<li><a href="login.php">&laquo;Regresar</a></li>
+				<!-- <li><input type="reset" value="Limpiar"></li> -->
+				<li><a href="index.php">&laquo;Regresar</a></li>
 			</ul>
 		</form>
 	</div>

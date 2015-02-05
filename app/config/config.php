@@ -3,6 +3,7 @@
 /**
 * Archivo de configuraciones multiples
 */
+// session_save_path("tmp");
 session_start();
 
 // Load files

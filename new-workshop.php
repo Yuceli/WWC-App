@@ -73,8 +73,7 @@ if( $_SERVER['REQUEST_METHOD']==='POST' ){
         <input type="text" name="title" placeholder="Título del taller" required>
       </li>
       <li>
-        <textarea rows="4" cols="54" name="description" placeholder="Descripción" required>
-        </textarea>
+        <textarea rows="4" cols="54" name="description" placeholder="Descripción" required></textarea>
       </li>
       <br>
       <li>
@@ -87,7 +86,7 @@ if( $_SERVER['REQUEST_METHOD']==='POST' ){
         <input type="date" name="end_date" required>
       <ul class="buttons">
         <li><input type="submit" value="Guardar"></li>
-        <li><input type="reset" value="Limpiar"></li>
+        <!-- <li><input type="reset" value="Limpiar"></li> -->
       </ul>
     </form>
   </div>

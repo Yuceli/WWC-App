@@ -85,7 +85,7 @@ if ( $_SERVER['REQUEST_METHOD']==='POST') {
         <input type="hidden" name="id" value="<?php echo $workshop->id ?>">
       <ul class="buttons">
         <li><input type="submit" value="Guardar"></li>
-        <li><input type="reset" value="Limpiar"></li>
+        <!-- <li><input type="reset" value="Limpiar"></li> -->
       </ul>
     </form>
   </div>

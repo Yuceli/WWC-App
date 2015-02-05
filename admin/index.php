@@ -4,6 +4,9 @@ require '../app/config/config.php';
 require '../app/controller/WorkshopController.php';
 require '../app/controller/UserController.php';
 
+if($_SESSION['nickname']!=='admin'){
+  header("Location: index.php");
+}
 
 $controller = new WorkshopController();
 $cursos = $controller->all();
@@ -30,10 +33,11 @@ $users = $controller2->all();
   <nav class="navbar">
     <ul class="left-part">
       <li><a href="index.php">Inicio</a></li>
+      <li><a href="../index.php">Volver</a></li>
     </ul>
     <ul class="right-part">
     <?php if ( isset($_SESSION['nickname']) ){  ?>
-    <li class="navtext"><?php echo 'Bienvendo ' . $_SESSION['name']; ?> <a href="logout.php">Salir</a></li>
+    <li class="navtext"><?php echo 'Bienvendo ' . $_SESSION['name']; ?> <a href="../logout.php">Salir</a></li>
 
     <?php } else { ?>
     <li><a href="login.php">Iniciar sesión</a></li>

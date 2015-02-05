@@ -11,6 +11,10 @@
 		<ul class="left-part">
 			<li><a href="index.php">Inicio</a></li>
 			<li><a href="courses.php">Cursos</a></li>
+			<?php if ( isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin' ) {  ?>
+			<li><a href="new-workshop.php">Nuevo curso</a></li>
+			<li><a href="admin/">Administración</a></li>
+			<?php } ?>
 		</ul>
 		<ul class="right-part">
 		<?php if ( isset($_SESSION['nickname']) ){  ?>
