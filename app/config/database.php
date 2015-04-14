@@ -14,9 +14,9 @@ return array(
 		
 		'mysql' => array(
 			'host'     => 'localhost',
-			'database' => 'mvcito',
+			'database' => 'wwc',
 			'username' => 'root',
-			'password' => 'root',
+			'password' => '',
 			'encoding' => 'utf-8_unicode_ci'
  		)
 	)

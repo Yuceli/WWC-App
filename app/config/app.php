@@ -11,7 +11,7 @@ return array(
 	 */
 	
 	// Relace with your app url, ie: http://myapp.com
-	'base_url'           => 'http://localhost/mvcito/',
+	'base_url'           => 'http://localhost/wwc/',
 	// Replace with the main controller to show in root path
 	'default_controller' => 'users',
 	// Replace with the main controller method to show in root path
