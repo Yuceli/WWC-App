@@ -17,15 +17,16 @@ class WorkshopsController extends Controller {
 
 	public function index()
 	{
-		$workshops = Workshops::all();
+		$workshops = Workshop::all();
+		// var_dump($workshops); exit;
 		View::make('workshops.list', 'default', array(
-			'whorkshops' => $workshops
+			'workshops' => $workshops
 		));
 	}
 
 	public function show($id = false)
 	{
-     $workshops = Workshops::find($id);
+     $workshops = Workshop::find($id);
 		View::make('workshops.show', 'default', array(
 			'workshops' => $workshops
 		));
@@ -38,7 +39,7 @@ class WorkshopsController extends Controller {
 
 	public function edit($workshops_id)
 	{
-		$workshops = Workshops::find($workshops_id);
+		$workshops = Workshop::find($workshops_id);
 		View::make('workshops.edit', 'default', array(
 			'workshops' => $workshops
 		));
@@ -46,7 +47,7 @@ class WorkshopsController extends Controller {
 
 	public function store()
 	{
-		$workshops = Workshops::create(
+		$workshops = Workshop::create(
 			array(
 				'title' => $_REQUEST['title'],
 				'description'  => $_REQUEST['description'],
@@ -60,7 +61,7 @@ class WorkshopsController extends Controller {
 
 	public function update($workshops_id)
 	{
-		$workshops = Workshops::find($workshops_id);
+		$workshops = Workshop::find($workshops_id);
 
 		$workshops->title = $_REQUEST['title'];
 		$workshops->description = $_REQUEST['description'];
@@ -74,7 +75,7 @@ class WorkshopsController extends Controller {
 
 	public function delete($workshops_id)
 	{
-		$workshops = Workshops::find($workshops_id);
+		$workshops = Workshop::find($workshops_id);
 		$workshops->delete();
 		Redirect::to();
 	}

@@ -10,7 +10,7 @@ abstract class Singleton {
 	{
 		static $instance = null;
 		if (is_null($instance)) {
-			$instance = new static();
+			$instance = new static;
 		}
 
 		return $instance;
