@@ -27,7 +27,7 @@ class WorkshopsController extends Controller {
 	{
      $workshops = Workshops::find($id);
 		View::make('workshops.show', 'default', array(
-			'workshops' = $workshops
+			'workshops' => $workshops
 		));
 	}
 
@@ -40,7 +40,7 @@ class WorkshopsController extends Controller {
 	{
 		$workshops = Workshops::find($workshops_id);
 		View::make('workshops.edit', 'default', array(
-			'workshops' = $workshops
+			'workshops' => $workshops
 		));
 	}
 
@@ -51,8 +51,8 @@ class WorkshopsController extends Controller {
 				'title' => $_REQUEST['title'],
 				'description'  => $_REQUEST['description'],
 				'begin_date'     => $_REQUEST['begin_date'],
-				'end_date'  => sha1($_REQUEST['end_date'])
-                'role'      => $_REQUEST['role']
+				'end_date'  => sha1($_REQUEST['end_date']),
+				'role'      => $_REQUEST['role']
 				)
 			);
 		Redirect::to();

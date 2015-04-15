@@ -16,7 +16,7 @@ return array(
 			'host'     => 'localhost',
 			'database' => 'wwc',
 			'username' => 'root',
-			'password' => 'root',
+			'password' => '',
 			'encoding' => 'utf-8_unicode_ci'
  		)
 	)
