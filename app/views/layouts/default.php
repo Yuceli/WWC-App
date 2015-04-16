@@ -34,7 +34,7 @@
 				<div class="collapse navbar-collapse" id="navigation">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="<?= URL::to('users.add') ?>">Añadir</a></li>
-						<li><button type="button" class="btn btn-success navbar-btn btn-circle" href="<?= URL::to('session.logout') ?>">Sign in</button></li>
+						<li><a class="btn" href="<?= URL::to('session.logout') ?>">Sign in</a></li>
 						<li><p class="navbar-text"><?= Session::read('user.email') ?></p></li>
 					</ul>
 				</div>
