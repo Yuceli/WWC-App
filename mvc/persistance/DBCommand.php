@@ -52,7 +52,8 @@ class DBCommand {
 	public function insert(Model $model)
 	{
 		$queryBuilder = new QueryBuilder();
-        $fillables = array_diff($model->getFields(), array($model->getPrimaryKey()));
+        // $fillables = array_diff($model->getFields(), array($model->getPrimaryKey()));
+        $fillables = $model->getFillables();
 		$queryBuilder->insert($model->table, $fillables);
 		$queryBuilder->values($fillables);
         $query = $queryBuilder->build();
@@ -107,7 +108,8 @@ class DBCommand {
 	public function update(Model $model)
 	{
         $queryBuilder = new QueryBuilder();
-        $fillables = array_diff($model->getAttributes(), array($model->getPrimaryKey() => $model->{$model->getPrimaryKey()}));
+        // $fillables = array_diff($model->getAttributes(), array($model->getPrimaryKey() => $model->{$model->getPrimaryKey()}));
+        $fillables = $model->getFillables();
         $queryBuilder->update($model->table)->set($fillables)->where("{$model->table}.{$model->getPrimaryKey()} = {$model->{$model->getPrimaryKey()}}");
         $query = $queryBuilder->build();
         $values = array_diff($model->getAttributes(), array($model->getPrimaryKey() => $model->{$model->getPrimaryKey()}));
