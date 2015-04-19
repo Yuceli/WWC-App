@@ -38,6 +38,10 @@ class DBCommand {
     {
         $pdo = DBConnection::getConnection();
         $stm = $pdo->prepare($query);
+        echo $query . '<br>';
+        foreach ($values as $value) {
+        	echo $value . '<br>';
+        }
         $stm->execute($values);
         $id = $pdo->lastInsertId();
         $pdo = null;

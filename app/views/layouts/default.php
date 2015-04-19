@@ -33,6 +33,8 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="navigation">
 					<ul class="nav navbar-nav navbar-right">
+						<li> <a href="<?= URL::to('workshops') ?>">Cursos</a> </li>
+						<li> <a href="<?= URL::to('subscriptions') ?>">Mis Cursos</a> </li>
 						<li><a href="<?= URL::to('users.add') ?>">Añadir</a></li>
 						<li><a class="btn" href="<?= URL::to('session.logout') ?>">Sign in</a></li>
 						<li><p class="navbar-text"><?= Session::read('user.email') ?></p></li>
