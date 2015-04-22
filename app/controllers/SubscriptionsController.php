@@ -45,9 +45,9 @@ class SubscriptionsController extends Controller {
 	{
 		$subscription = Subscription::create(
 			array(
-				'user_id' => $user_id,
-				'workshop_id'  => $workshop_id,
-				'inscription_date'     => date('Y-m-d H:i:s'),
+				'user_id'          => $user_id,
+				'workshop_id'      => $workshop_id,
+				'inscription_date' => date('Y-m-d H:i:s'),
 				)
 			);
 		Redirect::to('subscriptions');

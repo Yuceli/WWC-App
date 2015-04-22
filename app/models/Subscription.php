@@ -5,6 +5,6 @@
 */
 class Subscription extends Model implements Authenticable {
 	
-	protected $fillable = ['id', 'user_id', 'workshop_id', 'inscription_date'];
+	protected $fillable = ['user_id', 'workshop_id', 'inscription_date'];
 	public $table = "users_workshops";
 }
