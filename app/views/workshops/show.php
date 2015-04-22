@@ -1,4 +1,4 @@
-<br><br><br><br>
+<br><br><br>
 <div class="row">
     <div class="well">
         <div class="title">Datos del curso</div>
