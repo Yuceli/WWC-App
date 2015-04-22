@@ -52,8 +52,7 @@ class WorkshopsController extends Controller {
 				'title' => $_REQUEST['title'],
 				'description'  => $_REQUEST['description'],
 				'begin_date'     => $_REQUEST['begin_date'],
-				'end_date'  => sha1($_REQUEST['end_date']),
-				'role'      => $_REQUEST['role']
+				'end_date'  => $_REQUEST['end_date'],
 				)
 			);
 		Redirect::to();
@@ -61,22 +60,22 @@ class WorkshopsController extends Controller {
 
 	public function update($workshops_id)
 	{
-		$workshops = Workshop::find($workshops_id);
+		$workshop = Workshop::find($workshop_id);
 
-		$workshops->title = $_REQUEST['title'];
-		$workshops->description = $_REQUEST['description'];
-		$workshops->begin_date  = $_REQUEST['begin_date'];
-		$workshops->end_date = sha1($_REQUEST['end_date']);
+		$workshop->title = $_REQUEST['title'];
+		$workshop->description = $_REQUEST['description'];
+		$workshop->begin_date  = $_REQUEST['begin_date'];
+		$workshop->end_date = $_REQUEST['end_date'];
 
-		$user->save();
+		$workshop->save();
 
 		Redirect::to();
 	}
 
 	public function delete($workshops_id)
 	{
-		$workshops = Workshop::find($workshops_id);
-		$workshops->delete();
+		$workshop = Workshop::find($workshops_id);
+		$workshop->delete();
 		Redirect::to();
 	}
 	
