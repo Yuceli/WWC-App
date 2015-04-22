@@ -8,6 +8,7 @@
 
 	<!-- Bootstrap CSS -->
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -34,7 +35,7 @@
 				<div class="collapse navbar-collapse" id="navigation">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="<?= URL::to('users.add') ?>">Añadir</a></li>
-						<li><button type="button" class="btn btn-success navbar-btn btn-circle" href="<?= URL::to('session.logout') ?>">Sign in</button></li>
+						<li><a href="<?= URL::to('users.add') ?>">Sign in</a></li>
 						<li><p class="navbar-text"><?= Session::read('user.email') ?></p></li>
 					</ul>
 				</div>
@@ -42,10 +43,12 @@
 		</nav>
 
 
-		<br><br><br><br>
-		<div id="wrapper" class="container">
+
+		<div id="wrapper">
 			<?php include $view; ?>
 		</div>
+
+
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->
