@@ -35,3 +35,15 @@ que se impartirán por parte de **WWC**, y a los asistentes.
 
   a. Se agrega un botón de "Compartir" para que el usuario pueda compartir el
   curso que desee en Facebook y Twitter.
+
+## Instalacion
+Para la instalacion de requiere de:
+- Apache Server
+- MySQL
+- PHP 5.4
+
+### Configuracion
++ Para configurar el proyecto se debe editar el archivo `/app/config/app.php` con la url necesaria en tu ambiente de pruebas.
++ Editar el archivo `/app/config/database.php` para añadir las credenciales de tu base de datos.
+
+> Cualquier duda, contactar a [Arandi López](arandilopez.github.io).

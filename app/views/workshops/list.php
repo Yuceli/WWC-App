@@ -23,9 +23,11 @@
 				<div class="col-md-4 text-center">
 				
 					<?= "Nombre: $workshop->title <br>Fecha de inicio: $workshop->begin_date: <br>Fecha de finalización: $workshop->end_date" ?> 
-					<a href="<?= URL::to("workshops.show.$workshop->id")?>">Mostrar</a> |
-					<a href="<?= URL::to("workshops.edit.$workshop->id")?>">Editar</a> |
+					<a href="<?= URL::to("workshops.show.$workshop->id")?>">Mostrar</a> 
+				<?php if(Session::read('user.role') === 'admin'): ?>
+					|<a href="<?= URL::to("workshops.edit.$workshop->id")?>">Editar</a> |
 					<a href="<?= URL::to("workshops.delete.$workshop->id")?>">Eliminar</a> 
+				<?php endif; ?>
 			    </div>
 				<?php } ?>
 		</div>

@@ -18,3 +18,8 @@
     display: block;
     margin: 0 auto;
 }
+
+.footer{
+    margin-top: 70px;
+    padding-top: 50px;
+}
