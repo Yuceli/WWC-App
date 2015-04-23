@@ -47,6 +47,9 @@
 							</li>
 
 						<?php endif; ?>
+						<?php if(Session::read('user.role') === 'user'): ?>
+							<li><a href="<?= URL::to('subscriptions.index') ?>">Mis suscripciones</a></li>
+						<?php endif; ?>
 						<?php if(Session::has('user.email')): ?>
 							<li><a href="<?= URL::to('session.logout') ?>">Sign out</a></li>
 						<?php else: ?>	

@@ -9,9 +9,9 @@ class SubscriptionsController extends Controller {
 		'index'  => ['*'],
 		'add'    => ['admin'],
 		'edit'   => ['admin'],
-		'store'  => ['admin'],
+		'store'  => ['user'],
 		'update' => ['admin'],
-		'delete' => ['admin'],
+		'delete' => ['user'],
         'show'   => ['*']
  	];
 
