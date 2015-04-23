@@ -8,7 +8,7 @@
     <meta name="description" content="Este es el login de mi framework">
     <meta name="author" content="Arandi Lopez">
 
-    <title>Loggeo en MVCito</title>
+    <title>Login - WWC</title>
 
     <!-- Bootstrap core CSS -->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">

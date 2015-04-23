@@ -34,9 +34,24 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="navigation">
 					<ul class="nav navbar-nav navbar-right">
-						<!-- <li><a href="<?= URL::to('users.add') ?>">Añadir</a></li> -->
-						<li><a href="<?= URL::to('users.add') ?>">Sign in</a></li>
-						<li><a href="<?= URL::to('session.logout') ?>">Sign out</a></li>
+						<?php if(Session::read('user.role') === 'admin'): ?>
+
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Acciones <span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="<?= URL::to('users.index') ?>">Ver todos los usuarios</a></li>
+									<li><a href="<?= URL::to('users.add') ?>">Añadir nuevo usuario</a></li>
+									<li class="divider"></li>
+									<li><a href="<?= URL::to('workshops.add') ?>">Añadir nuevo taller</a></li>
+								</ul>
+							</li>
+
+						<?php endif; ?>
+						<?php if(Session::has('user.email')): ?>
+							<li><a href="<?= URL::to('session.logout') ?>">Sign out</a></li>
+						<?php else: ?>	
+							<li><a href="<?= URL::to('session.login') ?>">Sign in</a></li>
+						<?php endif; ?>
 						<li><p class="navbar-text"><?= Session::read('user.email') ?></p></li>
 					</ul>
 				</div>
@@ -48,11 +63,18 @@
 		<div id="wrapper">
 			<?php include $view; ?>
 		</div>
+	</div>
 
-
-		<!-- jQuery -->
-		<script src="//code.jquery.com/jquery.js"></script>
-		<!-- Bootstrap JavaScript -->
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-	</body>
-	</html>
+	<div class="container-fluid footer">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="pull-right">Todos los derechos reservados &copy; 2015 - WWC</div>
+			</div>
+		</div>
+	</div>
+	<!-- jQuery -->
+	<script src="//code.jquery.com/jquery.js"></script>
+	<!-- Bootstrap JavaScript -->
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>
