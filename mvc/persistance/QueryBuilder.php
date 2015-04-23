@@ -61,7 +61,7 @@ class QueryBuilder {
 	public function set($values)
 	{
         $stm = "";
-        foreach($values as $key => $v) {
+        foreach($values as $key) {
             $stm .= ",$key = :$key";
         }
 		$s = trim($stm, ',');

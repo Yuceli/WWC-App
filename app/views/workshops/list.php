@@ -28,6 +28,10 @@
 					|<a href="<?= URL::to("workshops.edit.$workshop->id")?>">Editar</a> |
 					<a href="<?= URL::to("workshops.delete.$workshop->id")?>">Eliminar</a> 
 				<?php endif; ?>
+				<?php if(Session::read('user.role') === 'user'): ?>
+					<?php $user = Auth::getUser() ?>
+					<a href="<?= URL::to("subscriptions.store.$user->id.$workshop->id") ?>">Suscribirse</a>
+				<?php endif; ?>
 			    </div>
 				<?php } ?>
 		</div>
